@@ -12,7 +12,7 @@ class Model {
     func getVideos() {
         
         // Create a URL object
-        let url = URL (string: Constans.API_URL)
+        let url = URL(string: Constans.API_URL)
         
         guard url != nil else{
             print("Error, there is no API_URL")
@@ -31,8 +31,22 @@ class Model {
                 return
             }
             
+            do {
+                
             // Parsing the data into viedo objects
-        }
+            let decoder = JSONDecoder()
+                
+            decoder.dateDecodingStrategy = .iso8601
+            
+            let response = try decoder.decode(Response.self, from: data!)
+                
+                dump(response)
+                
+            } catch{
+                
+            }
+            
+         }
         dataTask.resume()
         // Kick off the task
     }
