@@ -10,7 +10,7 @@ import Foundation
 class Video: Decodable {
     
     // MARK: VARS
-
+    
     var videoId = ""
     var title = ""
     var description = ""
@@ -19,7 +19,7 @@ class Video: Decodable {
     
     // MARK: CODING KEYS
     
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys:String, CodingKey {
         
         case snippet
         case thumbnails
@@ -52,7 +52,7 @@ class Video: Decodable {
         self.published = try snippetContainer.decode(Date.self, forKey: .published)
         
         // Parse thumbnails
-        let thumbnailContainer = try snippetContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .thumbnail)
+        let thumbnailContainer = try snippetContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .thumbnails)
         
         let heighContainer = try thumbnailContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .high)
         
