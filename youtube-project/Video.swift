@@ -9,11 +9,15 @@ import Foundation
 
 class Video: Decodable {
     
+    // MARK: VARS
+
     var videoId = ""
     var title = ""
     var description = ""
     var thumbnail = ""
     var published = Date()
+    
+    // MARK: CODING KEYS
     
     enum CodingKeys: String, CodingKey {
         
@@ -29,6 +33,8 @@ class Video: Decodable {
         case videoId
         
     }
+    
+    //MARK: JSON PARSING
     
     required init(from decoder: Decoder) throws {
     
