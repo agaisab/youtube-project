@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E214D63A26088CBF002E91EB /* ConstansTamplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D63926088CBF002E91EB /* ConstansTamplete.swift */; };
 		E222DC032602206400ACF272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222DC022602206400ACF272 /* AppDelegate.swift */; };
 		E222DC052602206400ACF272 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222DC042602206400ACF272 /* SceneDelegate.swift */; };
 		E222DC072602206400ACF272 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222DC062602206400ACF272 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E214D63926088CBF002E91EB /* ConstansTamplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstansTamplete.swift; sourceTree = "<group>"; };
 		E222DBFF2602206400ACF272 /* youtube-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "youtube-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E222DC022602206400ACF272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E222DC042602206400ACF272 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,9 +70,10 @@
 				E222DC042602206400ACF272 /* SceneDelegate.swift */,
 				E222DC062602206400ACF272 /* ViewController.swift */,
 				E28B1D622603614B00975087 /* Constans.swift */,
+				E214D63926088CBF002E91EB /* ConstansTamplete.swift */,
 				E28B1D652603638200975087 /* Video.swift */,
-				E28B1D68260363DB00975087 /* Model.swift */,
 				E28B1D6D26037D8800975087 /* Response.swift */,
+				E28B1D68260363DB00975087 /* Model.swift */,
 				E222DC082602206400ACF272 /* Main.storyboard */,
 				E222DC0B2602206500ACF272 /* Assets.xcassets */,
 				E222DC0D2602206500ACF272 /* LaunchScreen.storyboard */,
@@ -155,6 +158,7 @@
 				E28B1D69260363DB00975087 /* Model.swift in Sources */,
 				E222DC052602206400ACF272 /* SceneDelegate.swift in Sources */,
 				E28B1D662603638200975087 /* Video.swift in Sources */,
+				E214D63A26088CBF002E91EB /* ConstansTamplete.swift in Sources */,
 				E28B1D6E26037D8800975087 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

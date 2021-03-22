@@ -17,11 +17,11 @@ class Model {
         guard url != nil else {return}
         
         // Get a URLSession object
-        
         let session = URLSession.shared
-        // Get a data task from the URLSession ojbect
         
-         let dataTask = session.dataTask(with: url!) { (data, response, error) in
+        // Get a data task from the URLSession ojbect
+        let dataTask = session.dataTask(with: url!) { (data, response, error)
+            in
             
             //Check if there were any errors
             if error != nil || data == nil {return}
@@ -33,8 +33,8 @@ class Model {
             decoder.dateDecodingStrategy = .iso8601
             
             let response = try decoder.decode(Response.self, from: data!)
-                dump(response)
                 
+                dump(response)
             }
             catch{
                 

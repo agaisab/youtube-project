@@ -9,17 +9,26 @@ import Foundation
 
 struct Response: Decodable {
     
+    //MARK: VARS
+    
     var items: [Video]?
+    
+    
+    //MARK: CODING KEYS
     
     enum CodingKeys: String, CodingKey {
         
         case items
     }
     
-    init(from decoder: Decoder) throws {
+    
+    //MARK: JSON PARSING
+    
+    init (from decoder: Decoder) throws {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         self.items = try container.decode([Video].self, forKey: .items)
     }
+    
 }
