@@ -15,7 +15,7 @@ class VideoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     
-    var video: Video?
+    var video:Video?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,10 +32,7 @@ class VideoTableViewCell: UITableViewCell {
     
         self.video = v
         
-        
-        guard self.video != nil else {
-            return
-        }
+        guard self.video != nil else {return}
         
         // Set the title
         self.titleLabel.text = video?.title
@@ -47,10 +44,18 @@ class VideoTableViewCell: UITableViewCell {
         
         
         //Set the thumbnail
-        guard self.video!.thumbnail != "" else {
+        guard self.video!.thumbnail != "" else {return}
+        
+        // Check cache before downloading data
+        if let cachedData = CacheManager.getVideoCache(_url: self.video!.thumbnail) {
+             
+            //Set the thumnail imageview
+            self.thumbnailImageView.image = UIImage(data: cachedData)
             return
+            
         }
         
+        // download the thumbnail data
         let url = URL(string: self.video!.thumbnail)
  
             // Get the shared URL Session object
@@ -59,16 +64,16 @@ class VideoTableViewCell: UITableViewCell {
             // Create a data task
         let dataTask = session.dataTask(with: url!) { (data, response, error) in
             
-            if error == nil || data != nil {
+            if error == nil && data != nil {
+                
+                //Save the datat in the cache
+                
+                CacheManager.setVideoCache(url!.absoluteString, data)
                 
                 //Check that the downloaded url matches the video thumbnail url that this cell is currentlu set to display
-                if url!.absoluteString != self.video?.thumbnail{
-                    
+                if url!.absoluteString != self.video?.thumbnail{return}
                  // Video cell has been recycled for another video and no longer matches the tumbnail that was downloaded
-                    return
-                
-                }
-                
+            
                 //Create the image object
                 let image = UIImage(data: data!)
                 
@@ -79,8 +84,7 @@ class VideoTableViewCell: UITableViewCell {
                 
             }
         }
-        
-        
+    
         dataTask.resume()
     }
 

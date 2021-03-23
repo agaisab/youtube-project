@@ -21,7 +21,6 @@ struct Response: Decodable {
         case items
     }
     
-    
     //MARK: JSON PARSING
     
     init (from decoder: Decoder) throws {

@@ -19,7 +19,7 @@ class Video: Decodable {
     
     // MARK: CODING KEYS
     
-    enum CodingKeys:String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         
         case snippet
         case thumbnails
